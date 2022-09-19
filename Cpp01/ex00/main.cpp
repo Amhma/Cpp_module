@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 20:05:46 by amahla            #+#    #+#             */
-/*   Updated: 2022/08/04 21:01:39 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/19 17:31:25 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	output_err(void)
 	cerr << "Invalid input: you must first enter the name of the zombie and then, its memory location: 'stack' or 'heap'." << endl;
 	exit (EXIT_FAILURE);
 }
+
 int	main(int ac, char **av)
 {
 	string	memory;
@@ -49,4 +50,3 @@ int	main(int ac, char **av)
 		output_err();
 	return (EXIT_SUCCESS);
 }
-

@@ -6,14 +6,14 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 20:05:46 by amahla            #+#    #+#             */
-/*   Updated: 2022/08/05 11:09:24 by ammah            ###   ########.fr       */
+/*   Updated: 2022/09/19 16:48:53 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 #include <cstdlib>
-#include <limits>
+#include <ulimits>
 
 using	std::string;
 using	std::cout;
@@ -37,7 +37,7 @@ bool	check_digit(char *str)
 		if (!std::isdigit(str[i]))
 			return (false);	
 	}
-	if (i > 12 || std::atoll(str) > INT_MAX)
+	if (i > 12 || std::atol(str) > INT_MAX)
 		return (false);
 	return (true);
 }

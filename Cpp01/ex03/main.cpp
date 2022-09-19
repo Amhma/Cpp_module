@@ -6,7 +6,7 @@
 /*   By: ammah <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:36:47 by ammah             #+#    #+#             */
-/*   Updated: 2022/09/19 20:40:02 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/19 20:52:09 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 #include <string>
+#include <cstdlib>
 
 int main()
 {
@@ -32,5 +33,5 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	return 0;
+	return (EXIT_SUCCESS);
 }

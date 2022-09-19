@@ -6,13 +6,11 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:57:55 by amahla            #+#    #+#             */
-/*   Updated: 2022/08/05 11:08:52 by ammah            ###   ########.fr       */
+/*   Updated: 2022/09/19 20:21:27 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <string>
-#include <iostream>
 
 using	std::cout;
 using	std::string;

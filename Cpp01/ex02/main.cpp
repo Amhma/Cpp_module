@@ -6,13 +6,14 @@
 /*   By: ammah <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:15:53 by ammah             #+#    #+#             */
-/*   Updated: 2022/08/05 11:51:59 by ammah            ###   ########.fr       */
+/*   Updated: 2022/09/19 20:35:08 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 using std::string;
 using std::cout;
@@ -30,8 +31,8 @@ int	main( void )
 	cout << "    Address in memory of stringPTR : " << stringPTR << endl;
 	cout << endl;
 	cout << "    Value of str : " << str << endl;
-	cout << "    Value of stringPTR : " << *stringPTR << endl;
 	cout << "    Value of stringREF : " << stringREF << endl;
+	cout << "    Value of stringPTR : " << *stringPTR << endl;
 	cout << endl;
 	return (EXIT_SUCCESS);
 }

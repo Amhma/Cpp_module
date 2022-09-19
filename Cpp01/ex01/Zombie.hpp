@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:58:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/08/05 11:06:15 by ammah            ###   ########.fr       */
+/*   Updated: 2022/09/19 20:12:07 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define ZOMBIE_HPP
 
 #include <string>
+#include <iostream>
+#include <exception>
+#include <new>
 
 class	Zombie
 {

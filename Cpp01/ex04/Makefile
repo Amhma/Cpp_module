@@ -1,25 +1,30 @@
 NAME		= fight
 CC			= c++
-CPPFLAGS	= -std=c++98 -Wall -Werror -Wextra
-SRC			= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-OBJ			= $(SRC:.cpp=.o)
-RM			= rm -f
+CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
+OBJDIR		= ./obj
+SRC			=	main.cpp
+OBJ_O		= $(SRC:.cpp=.o)
+OBJ_D		= $(SRC:.cpp=.d)
+RM			= rm -rf
 
 all		: $(NAME)
 
-$(NAME) : $(OBJ)
-	$(CC) $(CPPFLAGS) -o $@ $^
-
-.cpp.o	:
+$(OBJDIR)/%.o	: %.cpp
+	@mkdir -p $(dir $@)
 	$(CC) $(CPPFLAGS) -o $@ -c $<
+
+$(NAME) : $(addprefix $(OBJDIR)/,$(OBJ_O))
+	$(CC) -o $@ $^
 
 .PHONY	: all clean fclean re
 
 clean	:
-	$(RM) $(OBJ)
+	$(RM) $(OBJDIR)
 
 fclean	: clean
 	$(RM) $(NAME)
 
 re		: fclean
 	make all
+
+-include	$(addprefix $(OBJDIR)/,$(OBJ_D))

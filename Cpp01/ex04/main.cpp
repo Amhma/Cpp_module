@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:41:26 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/21 12:03:11 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/21 19:38:19 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,51 +22,62 @@ using	std::cout;
 using	std::cerr;
 using	std::endl;
 
+void	print_err( const char *str )
+{
+	cout << str << endl;
+	exit( EXIT_FAILURE );
+}
+
+void	close_ifs( ifstream& ifs, const char *str )
+{
+	ifs.close();
+	print_err( str );
+}
+
+void	read_file( ifstream& ifs, ofstream& ofs, const char *argv[], const string name_ofs )
+{
+	string		src = argv[2];
+	string		rep = argv[3];
+	string		temp;
+	std::size_t	found;
+	
+	std::getline( ifs, temp );
+	if (ifs.eof())
+		close_ifs( ifs, "Empty file" );
+	if (ifs.bad())
+		close_ifs( ifs, "Error reading input_file" );
+	ofs.open( name_ofs.c_str(), ofstream::out | ofstream::trunc );
+	if ( !ofs.is_open() )
+		close_ifs( ifs, "Error opening output_file" );		
+	do
+	{
+		found = temp.find(src);
+		if ( found != string::npos )
+		{
+			temp.erase( found, src.size() );
+			temp.insert( found, rep );
+		}
+		ofs << temp << endl;
+	} while ( std::getline( ifs, temp ) );
+	
+	ofs.close();
+}
 
 int main( int argc, const char *argv[] )
 {
 
 	if ( argc != 4 )
-	{
-		cout << "Error: Invalid numbers of arguments" << endl;
-		exit( EXIT_FAILURE );
-	}
+		print_err( "Error: Invalid numbers of arguments" );
 
-	ifstream	ifs( argv[0], ifstream::in );
-	if ( ifs.is_open() )
-	{
-		string		temp = argv[0];
-		temp += ".replace";
-		ofstream		ofs( temp, ofstream::out | ofstream::trunc );
-		string		src = argv[2];
-		string		rep = argv[3];
+	ifstream	ifs( argv[1], ifstream::in );
+	string		temp;
+	ofstream	ofs;
 
-		if ( !ofs.is_open() )
-		{
-			cerr << "Error opening output_file" << endl;
-			exit( EXIT_FAILURE );
-		}
-		while ( ifs.getline(temp, '\n') )
-		{
-			std::size_t	found;
-			do
-			{
-				found = temp.find(src);
-				if (found != string::npos)
-				{
-					temp.erase( found, src.size() );
-					temp.insert( found, rep )
-				}
-			} while (found != string::npos);
-			ofs << temp;
-		}
-		ofs.close();
-	}
-	else
-	{
-		cerr << "Error opening output_file" << endl;
-		exit( EXIT_FAILURE );
-	}
+	if ( !ifs.is_open() )
+		print_err( "Error opening input_file" );
+	temp = argv[1];
+	temp += ".replace";
+	read_file( ifs, ofs, argv, temp );
 	ifs.close();
 	return ( EXIT_SUCCESS );
-}	
+}

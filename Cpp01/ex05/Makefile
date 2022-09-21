@@ -1,8 +1,9 @@
-NAME		= sed
+NAME		= harl
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
 OBJDIR		= ./obj
-SRC			=	main.cpp
+SRC			=	main.cpp	\
+				Harl.cpp
 OBJ_O		= $(SRC:.cpp=.o)
 OBJ_D		= $(SRC:.cpp=.d)
 RM			= rm -rf

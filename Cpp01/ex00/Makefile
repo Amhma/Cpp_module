@@ -12,7 +12,7 @@ RM			= rm -rf
 
 all		: $(NAME)
 
-$(OBJDIR)/%.o	: %.cpp
+$(OBJDIR)/%.o	: %.cpp | $(OBJDIR)
 	@mkdir -p $(dir $@)
 	$(CC) $(CPPFLAGS) -o $@ -c $<
 

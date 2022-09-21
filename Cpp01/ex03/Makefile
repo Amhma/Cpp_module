@@ -1,8 +1,11 @@
-NAME		= sed
+NAME		= fight
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
 OBJDIR		= ./obj
-SRC			=	main.cpp
+SRC			=	main.cpp	\
+				HumanA.cpp	\
+				HumanB.cpp	\
+				Weapon.cpp
 OBJ_O		= $(SRC:.cpp=.o)
 OBJ_D		= $(SRC:.cpp=.d)
 RM			= rm -rf

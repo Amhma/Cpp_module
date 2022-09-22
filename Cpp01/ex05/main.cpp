@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 20:10:36 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/21 20:11:44 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/22 12:06:06 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 int main( int argc, const char *argv[] )
 {
 	Harl	Harl;
-	(void)Harl;
+
+	for ( int i(1); i < argc; i++ )
+		Harl.complain( argv[i] );
 	return 0;
 }

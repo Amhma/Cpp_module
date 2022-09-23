@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ammah <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 15:29:41 by ammah             #+#    #+#             */
-/*   Updated: 2022/09/23 20:28:40 by amahla           ###   ########.fr       */
+/*   Created: 2022/09/23 18:45:36 by amahla            #+#    #+#             */
+/*   Updated: 2022/09/23 19:05:03 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef __FIXED_HPP__
+# define __FIXED_HPP__
 
-#include <string>
-
-class Weapon
+class Fixed
 {
 	public:
 
-	Weapon( std::string type );
-	~Weapon( void );
-	const std::string&	getType( void ) const;
-	void				setType( std::string type );
+		Fixed();
+		Fixed( const Fixed& );
+		~Fixed();
+		Fixed &operator=( const Fixed& );
+
+		int		getRawBits( void ) const;
+		void	setRawBits( int nb );
 
 	private:
 
-	std::string	_type;
-};	
+		int					_nb;
+		static int const	_fraction = 8;
+};
 
 #endif

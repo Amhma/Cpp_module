@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:41:26 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/22 12:07:24 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/23 20:31:03 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	read_file( ifstream& ifs, ofstream& ofs, const char *argv[], const string n
 	std::size_t	found;
 	
 	std::getline( ifs, temp );
-	if ( ifs.eof() )
+	if ( ifs.eof() && temp == "")
 		close_ifs( ifs, "Empty file" );
 	if ( ifs.bad() )
 		close_ifs( ifs, "Error reading input_file" );
@@ -52,7 +52,7 @@ void	read_file( ifstream& ifs, ofstream& ofs, const char *argv[], const string n
 	do
 	{
 		found = temp.find(src);
-		while ( found != string::npos )
+		while ( found != string::npos && src != "" )
 		{
 			temp.erase( found, src.size() );
 			temp.insert( found, rep );

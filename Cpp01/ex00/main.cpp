@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 20:05:46 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/19 17:31:25 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/23 14:15:20 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,11 @@ int	main(int ac, char **av)
 	if (ac == 3 && memory.compare("heap") == 0)
 	{
 		zombie = newZombie(name);
-		cout << name << ": WwwwhoOooOOo caaAAaall mmmmme frrrommm tHe HEeeEeEEAAAAP !!!" << endl;
+		zombie->announce();
 		delete (zombie);
 	}
 	else if (ac == 3 && memory.compare("stack") == 0)
 	{
-		cout << name << ": I'mmmm oNNNnn tHe STTTTAAAAACKKKKK ... GGRRRR" << endl;
 		randomChump(name);
 	}
 	else

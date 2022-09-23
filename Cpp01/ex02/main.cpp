@@ -6,7 +6,7 @@
 /*   By: ammah <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:15:53 by ammah             #+#    #+#             */
-/*   Updated: 2022/09/19 20:35:08 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/23 14:19:34 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	main( void )
 
 	cout << endl;
 	cout << "    Address in memory of str : " << &str << endl;
-	cout << "    Address in memory of stringREF : " << &stringREF << endl;
 	cout << "    Address in memory of stringPTR : " << stringPTR << endl;
+	cout << "    Address in memory of stringREF : " << &stringREF << endl;
 	cout << endl;
 	cout << "    Value of str : " << str << endl;
-	cout << "    Value of stringREF : " << stringREF << endl;
 	cout << "    Value of stringPTR : " << *stringPTR << endl;
+	cout << "    Value of stringREF : " << stringREF << endl;
 	cout << endl;
 	return (EXIT_SUCCESS);
 }

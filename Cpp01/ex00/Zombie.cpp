@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:57:55 by amahla            #+#    #+#             */
-/*   Updated: 2022/08/04 20:58:28 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/23 14:09:17 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Zombie::Zombie( string name )
 
 Zombie::~Zombie( void )
 {
-	cout << this->_name << ": Aaaaaaaaaarrrgggg !!" << endl;
+	cout << this->_name << ": zombie destroyed" << endl;
 }
 
 void	Zombie::announce( void )

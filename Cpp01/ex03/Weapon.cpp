@@ -6,7 +6,7 @@
 /*   By: ammah <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:40:06 by ammah             #+#    #+#             */
-/*   Updated: 2022/08/05 20:37:03 by ammah            ###   ########.fr       */
+/*   Updated: 2022/09/23 20:28:32 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Weapon::~Weapon( void )
 	cout << "Weapon destructor" << endl;
 }
 
-const string	Weapon::getType( void ) const
+const string&	Weapon::getType( void ) const
 {
 	return (this->_type);
 }

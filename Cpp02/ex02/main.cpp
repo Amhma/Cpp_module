@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 18:45:36 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/25 13:26:07 by amahla           ###   ########.fr       */
+/*   Created: 2022/09/23 18:59:59 by amahla            #+#    #+#             */
+/*   Updated: 2022/09/25 20:41:48 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_HPP__
-# define __FIXED_HPP__
+#include <iostream>
+#include "Fixed.hpp"
 
-class Fixed
+int main( void )
 {
-	public:
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-		Fixed();
-		Fixed( const Fixed & fpn );
-		~Fixed();
-		Fixed &operator=( const Fixed & fpn );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-		int		getRawBits( void ) const;
-		void	setRawBits( int nb );
+	std::cout << b << std::endl;
 
-	private:
+	std::cout << Fixed::max( a, b ) << std::endl;
 
-		int					_nb;
-		static const int	_fraction = 8;
-};
+	return 0;
+}
 
-#endif

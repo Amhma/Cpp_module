@@ -6,12 +6,13 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:16:51 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/24 11:58:34 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/25 16:26:42 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
+#include <cmath>
+
 
 using std::cout;
 using std::endl;
@@ -19,6 +20,19 @@ using std::endl;
 Fixed::Fixed( void ) : _nb(0)
 {
 	cout << "Default constructor called" << endl;
+}
+
+Fixed::Fixed( const int nb_integer )
+{
+	cout << "Int constructor called" << endl;
+	this->_nb = nb_integer << this->_fraction;
+
+}
+
+Fixed::Fixed( const float nb_float )
+{
+	cout << "Float constructor called" << endl;
+	this->_nb = roundf( nb_float * ( 1 << this->_fraction ) );
 }
 
 Fixed::Fixed( const Fixed & fpn )
@@ -32,7 +46,7 @@ Fixed::~Fixed( void )
 	cout << "Destructor called" << endl;
 }
 
-Fixed&	Fixed::operator=( const Fixed & fpn )
+Fixed &	Fixed::operator=( const Fixed & fpn )
 {
 	cout << "Copy assignment operator called" << endl;
 	this->_nb = fpn.getRawBits();
@@ -41,11 +55,26 @@ Fixed&	Fixed::operator=( const Fixed & fpn )
 
 int	Fixed::getRawBits( void ) const
 {
-	cout << "getRawBits member function called" << endl;
 	return ( this->_nb );
 }
 
 void	Fixed::setRawBits( int nb )
 {
 	this->_nb = nb;
+}
+
+float	Fixed::toFloat( void ) const
+{
+	return ( ( float )this->_nb / ( 1 << this->_fraction ) );
+}
+
+int		Fixed::toInt( void ) const
+{
+	return ( this->_nb >> this->_fraction );
+}
+
+std::ostream & operator<<( std::ostream & o, Fixed const & fpn )
+{
+	o << fpn.toFloat();
+	return (o);
 }

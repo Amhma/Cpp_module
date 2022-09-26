@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:16:51 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 14:19:38 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:29:01 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ Fixed::~Fixed( void )
 
 Fixed &	Fixed::operator=( const Fixed & fpn )
 {
-	this->_nb = fpn.getRawBits();
+	if ( this != &fpn )
+		this->_nb = fpn.getRawBits();
 	return ( *this );
 }
 
@@ -124,7 +125,7 @@ bool	Fixed::operator==( const Fixed & fpn ) const
 
 bool	Fixed::operator!=( const Fixed & fpn ) const
 {
-	if ( this->_nb <= fpn.getRawBits() )
+	if ( this->_nb != fpn.getRawBits() )
 		return ( true );
 	return ( false );
 }
@@ -161,7 +162,7 @@ Fixed	Fixed::operator--( int )
 
 //================== Member Fonctions =======================
 
-int	Fixed::getRawBits( void ) const
+int		Fixed::getRawBits( void ) const
 {
 	return ( this->_nb );
 }

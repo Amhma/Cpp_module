@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 18:45:36 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 18:32:17 by amahla           ###   ########.fr       */
+/*   Created: 2022/09/26 20:45:16 by amahla            #+#    #+#             */
+/*   Updated: 2022/09/26 20:55:07 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_HPP__
-# define __FIXED_HPP__
+#include "ClapTrap.hpp"
 
-class Fixed
-{
-	public:
+ClapTrap::ClapTrap( void );
 
-		Fixed( void );
-		Fixed( const Fixed & fpn );
-		~Fixed( void );
-		Fixed &operator=( const Fixed & fpn );
+ClapTrap::ClapTrap( const ClapTrap & rhs );
+ClapTrap::~ClapTrap( void );
 
-		int		getRawBits( void ) const;
-		void	setRawBits( int nb );
+ClapTrap &	operator=( const ClapTrap & rhs );
 
-	private:
 
-		int					_nb;
-		static const int	_fraction = 8;
-};
-
-#endif

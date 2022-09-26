@@ -6,13 +6,13 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 01:45:02 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 14:25:01 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 17:59:36 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-bool	vector_routine( Point const u, Point const v, Point const w, Point const point )
+bool	crossProductCheck( Point const u, Point const v, Point const w, Point const point )
 {
 	Point const	vec_1( u - v );
 	Point const	vec_2( u - point );
@@ -26,9 +26,9 @@ bool	vector_routine( Point const u, Point const v, Point const w, Point const po
 
 bool	bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	if ( vector_routine( a, b, c, point )
-		&& vector_routine( b, c, a, point )
-		&& vector_routine( c, a, b, point ) )
+	if ( crossProductCheck( a, b, c, point )
+		&& crossProductCheck( b, c, a, point )
+		&& crossProductCheck( c, a, b, point ) )
 		return ( true );
 	return ( false );
 }

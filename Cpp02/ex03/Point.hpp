@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 01:18:32 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 13:57:11 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:31:17 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ class Point
 {
 	public:
 
-		Point();
+		Point( void );
 		Point( const float x, const float y );
 		Point( const Fixed x, const Fixed y , const Fixed z);
 		Point( const Point & rhs );
 
-		~Point();
+		~Point( void );
 
 		Point &	operator=( const Point & rhs );
 		Point	operator-( const Point & rhs ) const;

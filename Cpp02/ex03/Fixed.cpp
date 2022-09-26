@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:16:51 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 14:19:03 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:23:46 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ bool	Fixed::operator==( const Fixed & fpn ) const
 
 bool	Fixed::operator!=( const Fixed & fpn ) const
 {
-	if ( this->_nb <= fpn.getRawBits() )
+	if ( this->_nb != fpn.getRawBits() )
 		return ( true );
 	return ( false );
 }

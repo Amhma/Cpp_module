@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 01:18:32 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 03:46:41 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 13:57:11 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ class Point
 
 		Point &	operator=( const Point & rhs );
 		Point	operator-( const Point & rhs ) const;
-		Point	operator^( const Point & rhs ) const;
-		Fixed	operator*( const Point & rhs ) const;
+		Point	operator*( const Point & rhs ) const;
+
+
+		bool	operator>( const Fixed & fpn ) const;
+		bool	operator<( const Fixed & fpn ) const;
 
 		const Fixed	getPointX( void ) const;
 		const Fixed	getPointY( void ) const;
 		const Fixed	getPointZ( void ) const;
-		void	setPointX( const Fixed x );
-		void	setPointY( const Fixed y );
-		void	setPointZ( const Fixed z );
 
 	private:
 

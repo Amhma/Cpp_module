@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 01:29:00 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 03:48:55 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 13:57:27 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Point	Point::operator-( const Point & rhs ) const
 	return ( vec );
 }
 
-Point	Point::operator^( const Point & rhs ) const
+Point	Point::operator*( const Point & rhs ) const
 {
 	Point	vec( ( this->_y * rhs.getPointZ() ) - ( this->_z * rhs.getPointY() ),
 					( this->_z * rhs.getPointX() ) - ( this->_x * rhs.getPointZ() ),
@@ -59,13 +59,18 @@ Point	Point::operator^( const Point & rhs ) const
 	return ( vec );
 }
 
-Fixed	Point::operator*( const Point & rhs ) const
+bool	Point::operator>( const Fixed & fpn ) const
 {
-	Fixed	dot;
+	if ( this->_z > fpn )
+		return ( true );
+	return ( false );
+}
 
-	dot = ( this->_x * rhs.getPointX() ) + ( this->_y * rhs.getPointY() )
-		+ ( this->_z * rhs.getPointZ() );
-	return ( dot );
+bool	Point::operator<( const Fixed & fpn ) const
+{
+	if ( this->_z < fpn )
+		return ( true );
+	return ( false );
 }
 
 const Fixed	Point::getPointX( void ) const

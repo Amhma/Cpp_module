@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:59:59 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 11:59:19 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 14:02:56 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 int main( void )
 {
 	Point const a( 1, 1);
-	Point const b( 3, 2 );
-	Point const c( 1, 3 );
-	Point const point( 1.04, 1.04 );
-
-	std::cout << point.getPointX() << std::endl;
+	Point const b( 1, 3 );
+	Point const c( 3, 1 );
+	Point const point( 1.2, 1.2 );
 
 	if ( bsp(a, b, c, point ) )
 		std::cout << "The point is in the triangle." << std::endl;

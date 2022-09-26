@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:16:51 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/25 20:04:41 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 14:14:00 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,11 @@ Fixed	Fixed::operator-( const Fixed & fpn ) const
 
 Fixed	Fixed::operator*( const Fixed & fpn ) const
 {
-	Fixed	temp;
+	Fixed			temp;
+	long long int	nb_long;
 
-	temp.setRawBits( ( this->_nb * fpn.getRawBits() ) >> this->_fraction );
+	nb_long = this->_nb * fpn.getRawBits();
+	temp.setRawBits( ( int )nb_long >> this->_fraction );
 	return ( temp );
 }
 
@@ -79,7 +81,7 @@ Fixed	Fixed::operator/( const Fixed & fpn ) const
 {
 	Fixed	temp;
 
-	temp.setRawBits( ( this->_nb / fpn.getRawBits() ) << this->_fraction);
+	temp.setRawBits( roundf( this->toFloat() / fpn.toFloat() * ( 1 << this->_fraction ) ) );
 	return ( temp );
 }
 

@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 01:45:02 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 13:55:36 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/26 14:25:01 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ bool	vector_routine( Point const u, Point const v, Point const w, Point const po
 
 bool	bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed const	zero( 0.f );
-
 	if ( vector_routine( a, b, c, point )
 		&& vector_routine( b, c, a, point )
 		&& vector_routine( c, a, b, point ) )

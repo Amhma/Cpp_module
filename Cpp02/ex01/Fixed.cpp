@@ -6,13 +6,12 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:16:51 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/25 16:26:42 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/27 20:13:50 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
-
 
 using std::cout;
 using std::endl;

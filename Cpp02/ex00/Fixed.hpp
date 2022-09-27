@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:45:36 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/26 18:32:17 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:14:14 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Fixed
 		Fixed &operator=( const Fixed & fpn );
 
 		int		getRawBits( void ) const;
-		void	setRawBits( int nb );
+		void	setRawBits( int const nb );
 
 	private:
 

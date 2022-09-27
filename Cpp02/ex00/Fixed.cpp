@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:16:51 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/24 11:58:34 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:14:25 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	Fixed::getRawBits( void ) const
 	return ( this->_nb );
 }
 
-void	Fixed::setRawBits( int nb )
+void	Fixed::setRawBits( int const nb )
 {
 	this->_nb = nb;
 }

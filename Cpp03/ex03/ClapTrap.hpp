@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:08:48 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 18:41:02 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 18:39:36 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class ClapTrap
 		void	setEnergy( const int nb );
 		void	setDamage( const int nb );
 
-	private:
+	protected:
 
 		string	_name;
 		int		_hit;

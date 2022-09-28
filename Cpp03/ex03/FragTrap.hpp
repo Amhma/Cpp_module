@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:13:57 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 18:14:26 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:41:29 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public virtual ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 
+		FragTrap( void );
 		FragTrap( const string name );
 		FragTrap( const FragTrap & rhs );
 

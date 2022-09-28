@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:54:02 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 19:09:48 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 20:46:20 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int main( void )
 	a = b;
 
 	cout << endl;
-	a.whoAmI();
-	cout << endl;
 	cout << "Hit points : " << a.getHit() << endl;
 	cout << "Energy points : " << a.getEnergy() << endl;
 	cout << "Damage points : " << a.getDamage() << endl;
+	cout << endl;
+	a.whoAmI();
 	cout << endl;
 	a.attack( "Ralph" );
 	cout << endl;

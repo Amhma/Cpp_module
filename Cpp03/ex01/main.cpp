@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:54:02 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 19:14:22 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:10:24 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int main( void )
 	cout << "Damage points : " << a.getDamage() << endl;
 	cout << endl;
 	a.attack( "Ralph" );
-	cout << endl;
-	a.ClapTrap::attack( "Ralph" );
 	cout << endl;
 	a.takeDamage( 0 );
 	a.beRepaired( 0 );

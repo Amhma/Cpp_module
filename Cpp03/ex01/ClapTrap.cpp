@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 20:45:16 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 18:39:52 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:47:08 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ using std::cout;
 using std::endl;
 
 //====================== Constructors =====================
+
+ClapTrap::ClapTrap( void ) : _name(""), _hit(10), _energy(10), _damage(0)
+{
+	cout << "ClapTrap R3PO " << this->_name << " Default Constructor" << endl;
+}
 
 ClapTrap::ClapTrap( const string name ) : _name(name), _hit(10), _energy(10), _damage(0)
 {
@@ -40,11 +45,14 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap &	ClapTrap::operator=( const ClapTrap & rhs )
 {
+	if ( this != &rhs )
+	{
 		this->_name = rhs.getName();
 		this->_hit = rhs.getHit();
 		this->_energy = rhs.getEnergy();
 		this->_damage = rhs.getDamage();
-		return ( *this );
+	}
+	return ( *this );
 }
 
 //====================== Accessors ========================
@@ -119,31 +127,31 @@ void	ClapTrap::attack(const string & target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if ( this->_hit <= 0 )
-		cout << endl << "... but R3PO " << this->_name << " can't take damages... he's dead !" << endl;
+		cout << endl << "... but ClapTrap R3PO " << this->_name << " can't take damages... he's dead !" << endl;
 	else
 	{
-		cout << "R3PO " << this->_name;
+		cout << "ClapTrap R3PO " << this->_name;
 		cout << " took " << amount;
 		cout << " points of damage!" << endl;
 		this->_hit -= amount;
 		if ( this->_hit <= 0 )
-			cout << "R3PO " << this->_name << " is dead !" << endl;
+			cout << "ClapTrap R3PO " << this->_name << " is dead !" << endl;
 	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if ( this->_hit <= 0 )
-		cout << endl << "R3PO " << this->_name << " can't fix himself... he's dead !" << endl;
+		cout << endl << "ClapTrap R3PO " << this->_name << " can't fix himself... he's dead !" << endl;
 	else if ( this->_energy > 0 )
 	{
-		cout << "R3PO " << this->_name;
+		cout << "ClapTrap R3PO " << this->_name;
 		cout << " recovered " << amount;
 		cout << " points of hit !" << endl;
 		this->_hit += amount;
 		this->_energy--;
 	}
 	else
-		cout << "R3PO " << this->_name << " have no more energy points ... he can't fix himself" << endl;
+		cout << "ClapTrap R3PO " << this->_name << " have no more energy points ... he can't fix himself" << endl;
 }
 

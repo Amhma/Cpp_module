@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:13:57 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 17:36:38 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:23:23 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class FragTrap : public ClapTrap
 {
 	public:
 
+		FragTrap( void );
 		FragTrap( const string name );
 		FragTrap( const FragTrap & rhs );
 

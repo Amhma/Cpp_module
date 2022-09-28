@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:13:57 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 18:12:11 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:41:40 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public virtual ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 
+		ScavTrap( void );
 		ScavTrap( const string name );
 		ScavTrap( const ScavTrap & rhs );
 

@@ -18,7 +18,7 @@ $(OBJDIR)/%.o	: %.cpp
 	$(CC) $(CPPFLAGS) -o $@ -c $<
 
 $(NAME) : $(addprefix $(OBJDIR)/,$(OBJ_O))
-	$(CC) -o $@ $^
+	$(CC) $(OPTFLAG) -o $@ $^
 
 .PHONY	: all clean fclean re
 

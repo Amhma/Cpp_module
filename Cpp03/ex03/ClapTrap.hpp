@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:08:48 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 18:39:36 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:37:53 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ class ClapTrap
 {
 	public:
 
+		ClapTrap( void );
 		ClapTrap( const string name );
 		ClapTrap( const ClapTrap & rhs );
+
 		~ClapTrap( void );
+
 		ClapTrap &	operator=( const ClapTrap & rhs );
 
 		void	attack(const string & target);

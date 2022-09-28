@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:13:57 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 18:56:46 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/28 21:41:15 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	public:
 
+		DiamondTrap( void );
 		DiamondTrap( const string name );
 		DiamondTrap( const DiamondTrap & rhs );
 

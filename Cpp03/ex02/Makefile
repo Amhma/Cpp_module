@@ -3,6 +3,7 @@ CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
 OBJDIR		= ./obj
 SRC			=	main.cpp		\
+				ScavTrap.cpp	\
  				ClapTrap.cpp	\
 				FragTrap.cpp
 OBJ_O		= $(SRC:.cpp=.o)

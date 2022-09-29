@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 11:20:39 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/29 14:45:49 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/30 01:35:01 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		Animal( void );
 		Animal( const Animal & rhs );
 
-		~Animal( void );
+		virtual	~Animal( void );
 
 		Animal &	operator=( const Animal & rhs );
 

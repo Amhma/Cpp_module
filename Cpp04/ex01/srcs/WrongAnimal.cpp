@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 11:36:47 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/29 15:00:14 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/29 22:47:57 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal & rhs )
 
 WrongAnimal::~WrongAnimal( void )
 {
-	std::cout << "WrongAnimal Default Constructor" << std::endl;
+	std::cout << "WrongAnimal Default Destructor" << std::endl;
 }
 
 WrongAnimal &	WrongAnimal::operator=( const WrongAnimal & rhs )

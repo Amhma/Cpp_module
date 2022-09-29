@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 11:36:17 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/29 14:55:30 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/29 22:46:27 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog( void ) : Animal()
 	std::cout << "Dog Default Constructor" << std::endl;
 }
 
-Dog::Dog( const Dog & rhs )
+Dog::Dog( const Dog & rhs ) : Animal()
 {
 	std::cout << "Dog copy Constructor" << std::endl;
 	*this = rhs;
@@ -27,7 +27,7 @@ Dog::Dog( const Dog & rhs )
 
 Dog::~Dog( void )
 {
-	std::cout << "Dog Default Constructor" << std::endl;
+	std::cout << "Dog Default Destructor" << std::endl;
 }
 
 Dog &	Dog::operator=( const Dog & rhs )

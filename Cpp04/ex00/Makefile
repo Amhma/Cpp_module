@@ -1,8 +1,10 @@
 NAME		= Poly
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
+INCDIR		= -I headers
+SRCDIR		= ./srcs
 OBJDIR		= ./obj
-SRC			=	main.cpp		\
+SRC			= main.cpp		\
 				Animal.cpp		\
 				Cat.cpp			\
 				Dog.cpp			\
@@ -14,9 +16,9 @@ RM			= rm -rf
 
 all		: $(NAME)
 
-$(OBJDIR)/%.o	: %.cpp
+$(OBJDIR)/%.o	: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) -o $@ -c $<
+	$(CC) $(CPPFLAGS) $(INCDIR) -o $@ -c $<
 
 $(NAME) : $(addprefix $(OBJDIR)/,$(OBJ_O))
 	$(CC) -o $@ $^

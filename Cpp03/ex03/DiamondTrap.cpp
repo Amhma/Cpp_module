@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:07 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 21:42:09 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/29 10:58:49 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ DiamondTrap &	DiamondTrap::operator=( const DiamondTrap & rhs )
 
 void	DiamondTrap::whoAmI( void )
 {
-	if ( this->_hit <= 0 )
+	if ( this->_hit == 0 )
 		cout << "DiamondTrap R3PO" << this->_name << " can't introduce himself... He's dead !" << endl;
-	else if ( this->_energy <= 0 )
+	else if ( this->_energy == 0 )
 		cout << "DiamondTrap R3PO" << this->_name << " can't introduce himself... He hasn't energy !" << endl;
 	else
 	{

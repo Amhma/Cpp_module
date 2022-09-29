@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:08:48 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 21:37:53 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/29 10:41:49 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,22 @@ class ClapTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
-		string	getName( void ) const;
-		int		getHit( void ) const;
-		int		getEnergy( void ) const;
-		int		getDamage( void ) const;
+		string			getName( void ) const;
+		unsigned int	getHit( void ) const;
+		unsigned int	getEnergy( void ) const;
+		unsigned int	getDamage( void ) const;
 
 		void	setName( const string name );
-		void	setHit( const int nb );
-		void	setEnergy( const int nb );
-		void	setDamage( const int nb );
+		void	setHit( const unsigned int nb );
+		void	setEnergy( const unsigned int nb );
+		void	setDamage( const unsigned int nb );
 
 	protected:
 
-		string	_name;
-		int		_hit;
-		int		_energy;
-		int		_damage;
+		string			_name;
+		unsigned int	_hit;
+		unsigned int	_energy;
+		unsigned int	_damage;
 };
 
 #endif

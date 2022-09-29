@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:07 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 21:48:21 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/29 10:56:24 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ ScavTrap &	ScavTrap::operator=( const ScavTrap & rhs )
 
 void	ScavTrap::attack(const string & target)
 {
-	if ( this->_hit <= 0 )
+	if ( this->_hit == 0 )
 		cout << endl << "The wonderfull ScavTrap R3PO " << this->_name << " can't attack... he's dead !" << endl;
-	else if ( this->_energy <= 0 )
+	else if ( this->_energy == 0 )
 		cout << "The wonderfull ScavTrap R3PO " << this->_name << " have no more energy point ... he can't attack" << endl;
 	else
 	{
@@ -74,9 +74,9 @@ void	ScavTrap::attack(const string & target)
 
 void	ScavTrap::guardGate( void )
 {
-	if ( this->_hit <= 0 )
+	if ( this->_hit == 0 )
 		cout << endl << "ScavTrap R3PO " << this->_name << " can't say something... he's dead !" << endl;
-	else if ( this->_energy <= 0 )
+	else if ( this->_energy == 0 )
 		cout << "ScavTrap R3PO " << this->_name << " have no more energy point ... he can't say something" << endl;
 	else
 	{

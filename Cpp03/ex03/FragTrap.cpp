@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:07 by amahla            #+#    #+#             */
-/*   Updated: 2022/09/28 21:49:15 by amahla           ###   ########.fr       */
+/*   Updated: 2022/09/29 10:57:42 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ FragTrap &	FragTrap::operator=( const FragTrap & rhs )
 
 void	FragTrap::highFivesGuys( void )
 {
-	if ( this->_hit <= 0 )
+	if ( this->_hit == 0 )
 		cout << "FragTrap R3PO" << this->_name << " can't ask something... He's dead !" << endl;
-	else if ( this->_energy <= 0 )
+	else if ( this->_energy == 0 )
 		cout << "FragTrap R3PO" << this->_name << " can't ask something... He hasn't energy !" << endl;
 	else
 	{

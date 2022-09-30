@@ -1,18 +1,24 @@
-NAME		= ClapTrap
+NAME		= Abstract
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
+INCDIR		= -I headers
+SRCDIR		= ./srcs
 OBJDIR		= ./obj
-SRC			=	main.cpp		\
- 				ClapTrap.cpp
+SRC			= main.cpp			\
+				AMateria.cpp	\
+				Character.cpp	\
+				Cure.cpp		\
+				Ice.cpp			\
+				MateriaSource.cpp
 OBJ_O		= $(SRC:.cpp=.o)
 OBJ_D		= $(SRC:.cpp=.d)
 RM			= rm -rf
 
 all		: $(NAME)
 
-$(OBJDIR)/%.o	: %.cpp
+$(OBJDIR)/%.o	: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) -o $@ -c $<
+	$(CC) $(CPPFLAGS) $(INCDIR) -o $@ -c $<
 
 $(NAME) : $(addprefix $(OBJDIR)/,$(OBJ_O))
 	$(CC) -o $@ $^

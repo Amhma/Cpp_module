@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:03:16 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/01 12:55:09 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/01 12:23:29 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Character : public ICharacter
 		Character &	operator=( const Character & rhs );
 
 		virtual string const &	getName( void ) const;
-		AMateria**				getMateria( void ) const;
-		void					setMateria( const AMateria **m );
+		AMateria**				getMaterias( void ) const;
+		void					setMaterias( const AMateria **m );
 
 		virtual void			equip( AMateria *m );
 		virtual void			unequip( int idx );

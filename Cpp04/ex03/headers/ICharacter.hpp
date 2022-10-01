@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:52:57 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/01 02:55:24 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/01 13:16:17 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 # include <string>
 
-class Cure;
-class Ice;
+class Character;
 class AMateria;
 
 using std::string;

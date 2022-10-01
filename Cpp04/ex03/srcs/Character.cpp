@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:10:18 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/01 02:46:53 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/01 13:50:49 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Character &	Character::operator=( const Character & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->setMaterias( (const AMateria**)(rhs.getMaterias()) );
+		this->setMateria( (const AMateria**)(rhs.getMateria()) );
 		(string &)(this->_name) = rhs.getName();
 	}
 	return ( *this );
@@ -71,17 +71,20 @@ string const &	Character::getName( void ) const
 	return ( this->_name );
 }
 
-AMateria	**Character::getMaterias( void ) const
+AMateria	**Character::getMateria( void ) const
 {
 	return ( (AMateria **)(this->_m) );
 }
 
-void			Character::setMaterias( const AMateria **m )
+void			Character::setMateria( const AMateria **m )
 {
 	for ( int i(0); i < 4; i++ )
 	{
 		if ( this->_mOnFloor[i] )
+		{
 			delete this->_mOnFloor[i];
+			_mOnFloor[i] = NULL;
+		}
 		if ( this->_m[i] )
 			delete this->_m[i];
 		this->_m[i] = (*m)->clone();
@@ -95,11 +98,12 @@ void			Character::equip( AMateria *m )
 	for ( i = 0; i < 4 && this->_m[i]; i++ )
 		;
 	if ( i < 3 && m)
-		this->_m[i] = m->clone();
+		this->_m[i] = m;
 	for ( i = 0; i < 4; i++ )
 	{
 		if ( this->_mOnFloor[i] )
 			delete this->_mOnFloor[i];
+		_mOnFloor[i] = NULL;
 	}
 }
 

@@ -6,12 +6,12 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:55:01 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 23:51:33 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 01:33:16 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 
 int main( void )
@@ -19,17 +19,16 @@ int main( void )
 	try
 	{
 		
-		Bureaucrat	b( "Fred", 130 );
-		Form	c( "B28", 130, 10 );
-		Form	f( "B286", 130, 10 );
-		f = c;
+		Bureaucrat	b( "Fred", 26 );
+		AForm	*f = new PresidentialPardonForm( "Tony" );
+		std::cout << *f;
+		(*f).beSigned( b );
+		b.signForm( *f );
+		b.executeForm( *f );
+/*		std::cout << b << std::endl;
 		std::cout << f;
 		b.signForm( f );
-		f.beSigned( b );
-		std::cout << b << std::endl;
-		std::cout << f;
-		b.signForm( f );
-		f.beSigned( b-- );
+		f.beSigned( b-- );*/
 	}
 	catch ( std::exception & e )
 	{

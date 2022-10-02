@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:34:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 17:03:06 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/02 23:56:06 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat( const string name, int grade ) : _name( name ), _grade( 
 {
 	this->throw_exceptions();
 	if ( DEBUG )
-		std::cout << "Bureaucrat Default Constructor" << std::endl;
+		std::cout << "Bureaucrat Constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & rhs ) : _name( rhs.getName() ), _grade( rhs.getGrade() )

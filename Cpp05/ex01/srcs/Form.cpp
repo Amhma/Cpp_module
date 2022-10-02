@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 13:34:39 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 17:10:30 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/02 23:57:00 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Form::Form( const string name, const int signGrade, const int execGrade ) : _nam
 {
 	this->throw_exceptions();
 	if ( DEBUG )
-		std::cout << "Form Default Constructor" << std::endl;
+		std::cout << "Form Constructor" << std::endl;
 }
 
 Form::Form( const Form & rhs ) : _name( rhs.getName() ), _sign( rhs.getSign() ), _signGrade( rhs.getSignGrade() ), _execGrade( rhs.getExecGrade() )

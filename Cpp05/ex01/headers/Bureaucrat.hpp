@@ -6,23 +6,25 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:39:00 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 16:28:19 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/02 16:33:22 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __BUREAUCRAT_HPP__
 # define __BUREAUCRAT_HPP__
 
-# define DEBUG 0
-
 # include <string>
 # include <stdexcept>
 # include <ostream>
+# include "const.h"
+
+class Form;
 
 using std::string;
 
 class Bureaucrat
 {
+
 	public:
 
 		Bureaucrat( void );
@@ -41,6 +43,7 @@ class Bureaucrat
 		int				getGrade( void ) const;
 		void			setGrade( const int nb );
 
+		void			signForm( const Form & f );
 		void			throw_exceptions( void );
 
 		class GradeTooHighException : public std::exception
@@ -48,7 +51,7 @@ class Bureaucrat
 
 			public:
 
-				virtual const char*	what( void ) const throw();
+				virtual const char*	what() const throw();
 
 		};
 
@@ -57,7 +60,7 @@ class Bureaucrat
 
 			public:
 
-				virtual const char*	what( void ) const throw();
+				virtual const char*	what() const throw();
 
 		};
 

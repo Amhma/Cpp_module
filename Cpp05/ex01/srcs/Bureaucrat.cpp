@@ -6,12 +6,13 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:34:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 17:03:59 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/02 17:03:06 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat( void ) : _name( "" ), _grade( 150 )
 {
@@ -101,6 +102,16 @@ void	Bureaucrat::throw_exceptions( void )
 		throw ( Bureaucrat::GradeTooHighException() );
 	else if ( this->_grade > 150 )
 		throw ( Bureaucrat::GradeTooLowException() );
+}
+
+void	Bureaucrat::signForm( const Form & f )
+{
+	if ( f.getSign() )
+		std::cout << this->getName() << " couldn't sign " << f.getName() << " because it's already signed." << std::endl;
+	else if ( this->getGrade() <= f.getSignGrade() )
+		std::cout << this->getName() << " signed " << f.getName() << std::endl;
+	else
+		std::cout << this->getName() << " couldn't sign " << f.getName() << " because he hasn't the required grade." << std::endl;
 }
 
 const char*	Bureaucrat::GradeTooHighException::what( void ) const throw()

@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 23:28:16 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 01:28:03 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 15:22:12 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ const string &	PresidentialPardonForm::getTarget( void ) const
 
 void			PresidentialPardonForm::execute( Bureaucrat const & executor ) const
 {
-	if ( executor.getGrade() <= this->getExecGrade() )
-		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	else if ( !this->getSign() )
+	if ( !this->getSign() )
 		throw ( AForm::NotSignException() );
+	else if ( executor.getGrade() <= this->getExecGrade() )
+		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	else
 		throw ( AForm::ExecGradeTooLowException() );
 }

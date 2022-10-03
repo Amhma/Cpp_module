@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 23:28:16 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 15:22:12 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:52:00 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm( void ) :
-	AForm( "formulaire de pardon présidentiel", 25, 5 ), _target( "" )
+	AForm( "Presidential Pardon Form", 25, 5 ), _target( "" )
 {
 	if ( DEBUG )
 		std::cout << "PresidentialPardonForm Default Constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const string target ) :
-	AForm( "formulaire de pardon présidentiel", 25, 5 ), _target( target )
+	AForm( "Presidential Pardon Form", 25, 5 ), _target( target )
 {
 	if ( DEBUG )
 		std::cout << "PresidentialPardonForm Constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & rhs ) :
-	AForm( "formulaire de pardon présidentiel", 25, 5 )
+	AForm( "Presidential Pardon Form", 25, 5 )
 {
 	if ( DEBUG )
 		std::cout << "PresidentialPardonForm copy Constructor" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:17 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 18:14:58 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:53:19 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ) :
-	AForm( "formulaire de création d’arbustes", 145, 137 ), _target( "" )
+	AForm( "Shrubbery Creation Form", 145, 137 ), _target( "" )
 {
 	if ( DEBUG )
 		std::cout << "ShrubberyCreationForm Default Constructor" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const string target ) :
-	AForm( "formulaire de création d’arbustes", 145, 137 ), _target( target )
+	AForm( "Shrubbery Creation Form", 145, 137 ), _target( target )
 {
 	if ( DEBUG )
 		std::cout << "ShrubberyCreationForm Constructor" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & rhs ) :
-	AForm( "formulaire de création d’arbustes", 145, 137 )
+	AForm( "Shrubbery Creation Form", 145, 137 )
 {
 	if ( DEBUG )
 		std::cout << "ShrubberyCreationForm copy Constructor" << std::endl;

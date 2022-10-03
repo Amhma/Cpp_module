@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:06:36 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 18:42:56 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:52:44 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm( void ) :
-	AForm( "formulaire de demande de robotomie", 72, 45 ), _target( "" )
+	AForm( "Robotomy Request Form", 72, 45 ), _target( "" )
 {
 	if ( DEBUG )
 		std::cout << "RobotomyRequestForm Default Constructor" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const string target ) :
-	AForm( "formulaire de demande de robotomie", 72, 45 ), _target( target )
+	AForm( "Robotomy Request Form", 72, 45 ), _target( target )
 {
 	if ( DEBUG )
 		std::cout << "RobotomyRequestForm Constructor" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & rhs ) :
-	AForm( "formulaire de demande de robotomie", 72, 45 )
+	AForm( "Robotomy Request Form", 72, 45 )
 {
 	if ( DEBUG )
 		std::cout << "RobotomyRequestForm copy Constructor" << std::endl;

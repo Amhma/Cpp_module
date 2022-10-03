@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:17 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 15:46:33 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:14:58 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,30 +65,29 @@ void			ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 	{
 		nameFile = this->_target;
 		nameFile += "_shrubbery";
-		ofs.open( nameFile, std::ofstream::out | std::ofstream::trunc );
-		if ( ofs.is_open )
+		ofs.open( nameFile.c_str(), std::ofstream::out | std::ofstream::trunc );
+		if ( ofs.is_open() )
 		{
-			for ( int i(0); i < 100; i++ )
-				ofs << "        __ _.--..--._ _"
-ofs <<      .-' _/   _/\_   \_'-.
-    |__ /   _/\__/\_   \__|
-       |___/\_\__/  \___|
-              \__/
-              \__/
-               \__/
-                \__/
-             ____\__/___
-       . - '             ' -.
-      /                      \
-~~~~~~~  ~~~~~ ~~~~~  ~~~ ~~~  ~~~~~
-  ~~~   ~~~~~   ~!~~   ~~ ~  ~ ~ ~pjb
-
-------------------------------------------------
-Thank you for visiting https://asciiart.website/
-This ASCII pic can be found at
-https://asciiart.website/index.php?art=plants/trees
-
-				
+			for ( int i(0); i < 100 && ofs.good(); i++ )
+			{
+				ofs << std::endl;
+				ofs << "        __ _.--..--._ _			" << std::endl;
+				ofs << "     .-' _/   _/\\_   \\_'-.		" << std::endl;
+				ofs	<< "    |__ /   _/\\__/\\_   \\__|		" << std::endl;
+				ofs << "       |___/\\_\\__/  \\___|		" << std::endl;
+				ofs << "              \\__/		        " << std::endl;
+				ofs << "              \\__/				" << std::endl;
+				ofs << "               \\__/				" << std::endl;
+				ofs << "                \\__/			" << std::endl;
+				ofs << "             ____\\__/___		" << std::endl;
+				ofs << "       . - '             ' -.	" << std::endl;
+				ofs << "      /                      \\	" << std::endl;
+				ofs << "~~~~~~~  ~~~~~ ~~~~~  ~~~ ~~~  ~~~~~" << std::endl;
+				ofs << "~~~   ~~~~~   ~~~~   ~~ ~  ~ ~ ~~~~" << std::endl;
+				ofs << std::endl;
+			}
+			std::cout << "File " << this->_target << " created !"<< std::endl;
+		}
 	}
 	else
 		throw ( AForm::ExecGradeTooLowException() );

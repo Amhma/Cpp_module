@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 13:34:39 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 01:13:14 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 17:57:16 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,6 @@ std::ostream &	operator<<( std::ostream & o, const AForm & rhs )
 	else
 		o << " No" << std::endl;
 	o << "Grade required to be signed : " << rhs.getSignGrade() << std::endl;
-	o << "Grade required to be executed : " << rhs.getSignGrade() << std::endl << std::endl;
+	o << "Grade required to be executed : " << rhs.getExecGrade() << std::endl << std::endl;
 	return ( o );
 }

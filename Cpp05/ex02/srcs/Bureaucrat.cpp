@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:34:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 01:29:44 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:10:23 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	Bureaucrat::executeForm( const AForm & form )
 	}
 	catch ( std::exception & e )
 	{
-		std::cout << e.what() << std::endl;
+		throw ( AForm::ExecGradeTooLowException() );
 	}
 }
 

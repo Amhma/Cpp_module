@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:06:36 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 15:21:09 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:42:56 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ const string &	RobotomyRequestForm::getTarget( void ) const
 
 void			RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 {
+	srand ( time(NULL) );
 	if ( !this->getSign() )
 		throw ( AForm::NotSignException() );
 	else if ( executor.getGrade() <= this->getExecGrade() )
 	{
 		std::cout << "* FffffzzzzzzzzzZZZZZZzzZZzzZZZzZZzrrrRRRRRrrrRR * ( bruit de perceuse malade )" << std::endl;
-		if ( rand()% 2 )
+		if ( rand() % 2 )
 			std::cout << this->getTarget() << " has been robotomized." << std::endl;
 		else
 			std::cout << this->getTarget() << "'s robotomy failed." << std::endl;

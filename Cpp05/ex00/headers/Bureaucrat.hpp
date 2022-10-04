@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:39:00 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 16:28:19 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 18:32:07 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ class Bureaucrat
 	private:
 
 		const string	_name;
-		int	_grade;
+		int				_grade;
 
 };
 

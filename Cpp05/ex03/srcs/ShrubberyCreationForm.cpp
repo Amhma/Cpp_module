@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:17 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 18:53:19 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 19:09:12 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ void			ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 	{
 		nameFile = this->_target;
 		nameFile += "_shrubbery";
-		ofs.open( nameFile.c_str(), std::ofstream::out | std::ofstream::trunc );
-		if ( ofs.is_open() )
+		ofs.open( nameFile.c_str(), std::ofstream::out | std::ofstream::app );
+		if ( ofs.is_open() && ofs.good() )
 		{
-			for ( int i(0); i < 100 && ofs.good(); i++ )
+			for ( int i(0); i < 10 && ofs.good(); i++ )
 			{
 				ofs << std::endl;
 				ofs << "        __ _.--..--._ _			" << std::endl;
@@ -88,7 +88,14 @@ void			ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 			}
 			std::cout << "File " << this->_target << " created !"<< std::endl;
 		}
+		else
+			throw ( ShrubberyCreationForm::FileNotGood() );
 	}
 	else
 		throw ( AForm::ExecGradeTooLowException() );
+}
+
+const char*	ShrubberyCreationForm::FileNotGood::what( void ) const throw()
+{
+	return ( "Exception: Attempt to execute a form by a bureaucrat of too low a rank." );
 }

@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:55:01 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 16:53:27 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 18:35:55 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 int main( void )
 {
+
 	try
 	{
-		Bureaucrat	b( "Fred", 1 );
+		Bureaucrat	b( "Fred", 151 );
 		b++;
 		std::cout << b << std::endl;
 	}

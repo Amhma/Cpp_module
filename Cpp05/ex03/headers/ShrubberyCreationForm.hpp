@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:25:22 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 15:28:03 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 18:59:47 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ class ShrubberyCreationForm : public AForm
 		const string &	getTarget( void ) const;
 
 		virtual void	execute( Bureaucrat const & executor ) const;
+
+		class FileNotGood : std::exception
+		{
+			virtual const char* what( void ) const throw();
+		};
 
 	private:
 

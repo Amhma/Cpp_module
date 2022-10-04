@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:55:01 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 18:47:38 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 19:41:44 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 #include <iostream>
 
 int main( void )
 {
+	AForm		*form[4];
+
+	for ( int i(0); i < 4; i++ )
+		form[i] = NULL;
 	try
 	{
-		
 		Bureaucrat	b( "Fred", 150 );
-		AForm		*form[3];
+		Intern		someRandomIntern;
 
-		form[0] = new PresidentialPardonForm( "Tony" );
-		form[1] = new RobotomyRequestForm( "Hulk" );
-		form[2] = new ShrubberyCreationForm( "Jardin" );
+		form[0] = someRandomIntern.makeForm( "presidential pardon", "Tony" );
+		form[1] = someRandomIntern.makeForm( "robotomy request", "Bender" );
+		form[2] = someRandomIntern.makeForm( "shrubbery creation", "Jardin" );
+		form[3] = someRandomIntern.makeForm( "shrubbery creatin", "Jardin" );
 
 		std::cout << *form[0];
 		std::cout << *form[1];
 		std::cout << *form[2];
+
 
 		b.signForm( *form[2] );
 		(*form[2]).beSigned( b );
@@ -53,10 +59,23 @@ int main( void )
 		std::cout << *form[0];
 		std::cout << *form[1];
 		std::cout << *form[2];
+
+		for ( int i(0); i < 4; i++ )
+		{
+			if ( form[i] )
+				delete form[i];
+		}
+
 	}
 	catch ( std::exception & e )
 	{
 		std::cerr << e.what() << std::endl;
+		for ( int i(0); i < 4; i++ )
+		{
+			if ( form[i] )
+				delete form[i];
+		}
 	}
+
 	return 0;
 }

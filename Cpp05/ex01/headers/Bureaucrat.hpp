@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:39:00 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 16:33:22 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 18:41:59 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <string>
 # include <stdexcept>
 # include <ostream>
-# include "const.h"
+
+# define DEBUG 0
 
 class Form;
 

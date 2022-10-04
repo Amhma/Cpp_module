@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 13:05:57 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/02 16:35:09 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/04 18:43:21 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string>
 # include <stdexcept>
 # include <ostream>
-# include "const.h"
 
 using std::string;
 

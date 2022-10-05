@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 00:20:43 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/01 14:11:08 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 13:25:32 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ int main()
 
 	for ( int i(0); i < 10; i++ )
 	{
-		if ( !i % 2 )
+		if ( !(i % 2) )
 			meta[i] = new Cat();
 		else
 			meta[i] = new Dog();
 		std::cout << std::endl;
 	}
+
+	std::cout << std::endl;
+	std::cout << std::endl;
 
 	for ( int i(0); i < 10; i++ )
 	{

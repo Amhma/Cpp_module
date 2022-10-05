@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:18:55 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/01 13:55:45 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 14:14:11 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int main()
 	}
 
 	std::cout << std::endl;
-
 	ICharacter* bob = new Character("bob");
 
 	std::cout << std::endl;

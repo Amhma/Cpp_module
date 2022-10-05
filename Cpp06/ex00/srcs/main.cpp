@@ -3,41 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 00:20:43 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/03 13:27:42 by amahla           ###   ########.fr       */
+/*   Created: 2022/10/05 16:58:59 by amahla            #+#    #+#             */
+
+/*   Updated: 2022/10/05 21:07:38 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include <cstdlib>
 #include <iostream>
+#include "Number.hpp"
 
-int main()
+using std::cout;
+using std::endl;
+
+int main(int argc, const char *argv[])
 {
-	AAnimal *meta[10];
-
-	for ( int i(0); i < 10; i++ )
+	if ( argc != 2 )
 	{
-		if ( !(i % 2) )
-			meta[i] = new Cat();
-		else
-			meta[i] = new Dog();
-		std::cout << std::endl;
+		std::cout << "Error: one argument needed" << std::endl;
+		return ( EXIT_FAILURE );
 	}
 
-	std::cout << std::endl;
-	std::cout << std::endl;
+	Number	nb( std::strtod( argv[1], NULL ) );
+	std::cout << nb << std::endl ;
 
-	for ( int i(0); i < 10; i++ )
-	{
-		delete meta[i];
-		std::cout << std::endl;
-	}
-	return 0;
+	return ( EXIT_SUCCESS );
 }
-

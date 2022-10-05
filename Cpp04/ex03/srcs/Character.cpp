@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:10:18 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/01 13:50:49 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/03 14:05:31 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,11 @@ void			Character::equip( AMateria *m )
 	for ( i = 0; i < 4; i++ )
 	{
 		if ( this->_mOnFloor[i] )
+		{
+			std::cout << "Materias " << i << " on floor deleted ..." << std::endl;
 			delete this->_mOnFloor[i];
+			std::cout << std::endl;
+		}
 		_mOnFloor[i] = NULL;
 	}
 }

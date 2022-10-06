@@ -11,7 +11,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "Base.hpp"
 #include <exception>
 #include <iostream>
 #include <cstdlib>
@@ -21,14 +21,13 @@ using std::endl;
 
 int main( void )
 {
-	Data	*data = new Data;
-	Data	*data_res;
+	Base	*base;
 
-	data_res = deserialize( serialize( data ) );
-	if ( data_res != data )
-		std::cout << "Error: cast 'Data *' to 'uintptr_t' and reverse failed" << std::endl;
-	else
-		std::cout << "Cast 'Data *' to 'uintptr_t'and reverse successed" << std::endl;
-	delete data;
+	base = generate();
+	identify(base);
+	identify(*base);
+
+	delete base;
+
 	return ( EXIT_SUCCESS );
 }

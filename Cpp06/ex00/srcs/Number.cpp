@@ -6,7 +6,7 @@
 /*   By: amahla <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 20:10:13 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/05 21:53:24 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/06 12:04:42 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ Number::operator float( void )
 	return ( static_cast<float>( this->_numberDouble ));
 }
 
-#include <string>
-
 std::ostream &	operator<<( std::ostream & o, const Number & rhs )
 {
-	Number	a( rhs.getDouble() );
+	Number a( rhs );
 
 	o << "char: ";
-	if ( rhs.getDouble() <= CHAR_MAX && rhs.getDouble() >= CHAR_MIN )
-		o << static_cast<char>( a )  << std::endl;
+	if ( rhs.getDouble() <= 126 && rhs.getDouble() >= 32 )
+		o << '\'' <<  static_cast<char>( a ) << '\''  << std::endl;
+	else if ( rhs.getDouble() <= CHAR_MAX && rhs.getDouble() >= CHAR_MIN )
+		std::cout << "Non displayable" << std::endl;
 	else
 		o << "impossible" << std::endl;
 	o << "int: ";
@@ -92,7 +92,7 @@ std::ostream &	operator<<( std::ostream & o, const Number & rhs )
 	if ( rhs.getDouble() - floor( rhs.getDouble() ) == 0 )
 		o << std::fixed << std::setprecision(1);
 	o << "float: " << static_cast<float>( a ) << "f" << std::endl;
-	o << "double: " << rhs.getDouble() << std::setprecision(6) << std::endl;
+	o << "double: " << a.getDouble() << std::endl;
 
 	return ( o );
 }

@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 00:18:08 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/08 00:37:16 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/08 00:51:36 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ T&	max( T& a, T& b )
 }
 
 template< typename T>
-void	swap( T *a, T *b )
+void	swap( T& a, T& b )
 {
-	T	temp = *a;
-	*a = *b;
-	*b = temp;
+	T	temp = a;
+	a = b;
+	b = temp;
 }
 
 #endif

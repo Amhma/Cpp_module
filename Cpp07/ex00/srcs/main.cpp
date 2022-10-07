@@ -15,30 +15,25 @@
 #include <string>
 #include "whatever.hpp"
 
-using std::cout;
-using std::endl;
 using std::string;
 
 int main( void )
 {
-	int		x( 30 );
-	int		y( 70 );
-	string	str1( "I am the fisrt string" );
-	string	str2( "I am the second string" );
+	int a = 2;
+	int b = 3;
 
-	cout << endl << "	Instantiation:" << endl;
-	cout << endl << "x = 30" << endl << "y = 100" << endl << endl;;
-	cout << str1 << " ( str1 )" << endl;
-	cout << str2 << " ( str2 )" << endl << endl;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
-	cout << "	Using Templates functions:" << endl << endl;
-	cout << "min is " << min<int>( x, y ) << endl;
-	cout << "max is " << max<int>( x, y ) << endl << endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
 
-	swap<string>( &str1, &str2 );
-	cout << "swaping ..." << endl << endl;
-	cout << str1 << " ( str1 )" << endl;
-	cout << str2 << " ( str2 )" << endl << endl;
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
-	return ( 0 );
+	return 0;
 }

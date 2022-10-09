@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:37:04 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/09 16:39:24 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/09 16:52:37 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -24,7 +24,7 @@ int main(int, char**)
 		numbers[i] = i;
 	try
 	{
-		std::cout << easyfind< std::vector<int>, int >( numbers, 105 ) << std::endl;
+		std::cout << easyfind< std::vector<int> >( numbers, 50 ) << std::endl;
 	}
 	catch( std::exception & e)
 	{

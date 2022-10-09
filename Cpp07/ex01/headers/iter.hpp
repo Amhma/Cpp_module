@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 00:18:08 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/08 00:53:55 by amahla           ###   ########.fr       */
+/*   Created: 2022/10/08 11:32:23 by amahla            #+#    #+#             */
+/*   Updated: 2022/10/09 02:08:00 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WHATEVER_HPP__
-# define __WHATEVER_HPP__
+#ifndef __ITER_HPP__
+# define __ITER_HPP__
+
+# include <iostream>
+# include <string>
 
 template< typename T >
-T&	min( T& a, T& b )
+void	iter( T* array, std::size_t size, void (*f)( T & ) )
 {
-	return ( a < b ? a : b );
+	for( std::size_t i(0); i < size; i++ )
+		f( array[i] );
 }
 
 template< typename T >
-T&	max( T& a, T& b )
+void	print_array( T& elem )
 {
-	return ( a > b ? a : b );
-}
-
-template< typename T>
-void	swap( T& a, T& b )
-{
-	T	temp = a;
-	a = b;
-	b = temp;
+	std::cout << elem << std::endl;
 }
 
 #endif

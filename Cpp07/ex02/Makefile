@@ -1,11 +1,10 @@
-NAME		= base
+NAME		= array
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
 INCDIR		= -I headers
 SRCDIR		= ./srcs
 OBJDIR		= ./obj
-SRC			= main.cpp		\
-				Base.cpp
+SRC			= main.cpp
 OBJ_O		= $(SRC:.cpp=.o)
 OBJ_D		= $(SRC:.cpp=.d)
 RM			= rm -rf

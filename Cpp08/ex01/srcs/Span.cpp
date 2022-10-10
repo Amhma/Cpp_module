@@ -6,13 +6,14 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:40:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/10 02:42:10 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/10 18:27:47 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 #include <climits>
+#include <vector>
 #include <algorithm>
 #include <stdexcept>
 #include <cstdlib>
@@ -69,7 +70,7 @@ void	Span::addNumber( const int nb )
 	this->_lints.push_back( nb );
 }
 
-unsigned int	Span::longestSpan( void )
+unsigned int	Span::longestSpan( void ) const
 {
 	std::list<int>::const_iterator	it = this->_lints.begin();
 	std::list<int>::const_iterator	ite = this->_lints.end();
@@ -97,6 +98,16 @@ unsigned int	Span::shortestSpan( void )
 			size = temp;
 	} while ( it != --this->_lints.end() );
 	return ( size );
+}
+
+void			Span::insertNumbersRand( const int size )
+{
+	std::vector<int>	nbr( size );
+
+	srand(time(NULL));
+	for ( int i(0); i < size; i++ )
+		nbr[i] = rand();
+	this->_lints.insert( this->_lints.begin(), nbr.begin(), nbr.end() );
 }
 
 const char*	Span::NoSizeToFind::what( void ) const throw()

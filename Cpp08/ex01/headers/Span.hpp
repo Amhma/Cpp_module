@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:03:08 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/10 02:19:14 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/10 18:21:33 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class Span
 {
+
 	public:
 
 		Span( void );
@@ -29,11 +30,12 @@ class Span
 		Span &	operator=( const Span & rhs );
 
 		std::list<int>	getList( void ) const;
-		void			addNumber( const int nb);
 		unsigned int	getSize( void ) const;
+		void			addNumber( const int nb);
+		void			insertNumbersRand( const int size );
 
 		unsigned int	shortestSpan( void );
-		unsigned int	longestSpan( void );
+		unsigned int	longestSpan( void ) const;
 
 		class NoSizeToFind : public std::exception
 		{

@@ -6,16 +6,15 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:03:08 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/10 22:06:56 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/11 01:40:37 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __MUTANTSTACK_HPP__
 # define __MUTANTSTACK_HPP__
 
-# include <deque>
 # include <stack>
-#include <iostream>
+# include <iostream>
 
 template< typename T >
 class MutantStack : public std::stack<T>
@@ -23,68 +22,29 @@ class MutantStack : public std::stack<T>
 
 	public:
 
-		typedef typename std::deque<T>::reverse_iterator		iterator;
-		typedef typename std::deque<T>::iterator				reverse_iterator;
-		typedef typename std::deque<T>::const_reverse_iterator	const_iterator;
-		typedef typename std::deque<T>::const_iterator			const_reverse_iterator;
+		typedef typename std::deque<T>::iterator				iterator;
+		typedef typename std::deque<T>::reverse_iterator		reverse_iterator;
+		typedef typename std::deque<T>::const_iterator			const_iterator;
+		typedef typename std::deque<T>::const_reverse_iterator	const_reverse_iterator;
 
-		MutantStack<T>( void ) : std::stack<T>()
-		{}
-
-		MutantStack<T>( const MutantStack<T> & rhs ) : std::stack<T>( rhs )
-		{}
-
+		MutantStack<T>( void );
+		MutantStack<T>( const MutantStack<T> & rhs );
 		
-		virtual ~MutantStack<T>( void )
-		{}
+		virtual ~MutantStack<T>( void );
 
-		MutantStack<T> &	operator=( const MutantStack<T> & rhs )
-		{
-			if ( this != &rhs )
-				static_cast< std::stack<T> &>( *this ) = static_cast< const std::stack<T> &>( rhs );
-			return ( *this );
-		}
+		MutantStack<T> &	operator=( const MutantStack<T> & rhs );
 
-		iterator				begin( void )
-		{
-			return ( std::stack<T>::c.rbegin() );
-		}
-
-		iterator				end( void )
-		{
-			return ( std::stack<T>::c.rend() );
-		}
-
-		reverse_iterator		rbegin( void )
-		{
-			return ( std::stack<T>::c.begin() );
-		}
-
-		reverse_iterator		rend( void )
-		{
-			return ( std::stack<T>::c.end() );
-		}
-
-		const_iterator			cbegin( void )
-		{
-			return ( std::stack<T>::c.rbegin() );
-		}
-
-		const_iterator			cend( void )
-		{
-			return ( std::stack<T>::c.rend() );
-		}
-
-		const_reverse_iterator	crbegin( void )
-		{
-			return ( std::stack<T>::c.begin() );
-		}
-
-		const_reverse_iterator	crend( void )
-		{
-			return ( std::stack<T>::c.end() );
-		}
+		iterator				begin( void );
+		iterator				end( void );
+		reverse_iterator		rbegin( void );
+		reverse_iterator		rend( void );
+		const_iterator			cbegin( void );
+		const_iterator			cend( void );
+		const_reverse_iterator	crbegin( void );
+		const_reverse_iterator	crend( void );
 
 };
+
+# include "MutantStack.tpp"
 
 #endif

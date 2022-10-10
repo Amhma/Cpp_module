@@ -19,7 +19,7 @@ Array<T>::Array( unsigned int n ) : _array( new T[n] ), _size( n )
 {}
 
 template< typename T >
-Array<T>::Array( const Array & rhs ) : _array( NULL ), _size( 0 )
+Array<T>::Array( const Array<T> & rhs ) : _array( NULL ), _size( 0 )
 {
 	*this = rhs;
 }
@@ -32,7 +32,7 @@ Array<T>::~Array( void )
 }
 
 template< typename T >
-Array<T> &	Array<T>::operator=( const Array & rhs )
+Array<T> &	Array<T>::operator=( const Array<T> & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -49,7 +49,7 @@ Array<T> &	Array<T>::operator=( const Array & rhs )
 }
 
 template< typename T >
-T	& Array<T>::operator[]( unsigned int n )
+T	& Array<T>::operator[]( unsigned int n ) const
 {
 	if ( n < this->_size )
 		return ( this->_array[n] );
@@ -70,19 +70,13 @@ unsigned int	Array<T>::size( void ) const
 }
 
 template< typename T >
-void			Array<T>::setSize( const unsigned int size ) const
-{
-	this->_size = size;
-}
-
-template< typename T >
 const char*	Array<T>::InvalidIndice::what( void ) const throw()
 {
 	return ( "Exception: Invalid index." );
 }
 
 template< typename T >
-void			Array<T>::setArray( const T *array ) const
+void			Array<T>::setArray( const T *array )
 {
 	for ( unsigned int i(0); i < this->_size; i++ )
 		this->_array[i] = array[i];

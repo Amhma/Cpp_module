@@ -6,17 +6,18 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:37:04 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/09 03:11:43 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/10 17:44:15 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
+
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {

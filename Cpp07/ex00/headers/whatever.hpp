@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 00:18:08 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/08 00:53:55 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/10 17:31:49 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 # define __WHATEVER_HPP__
 
 template< typename T >
-T&	min( T& a, T& b )
+const T&	min( const T& a, const T& b )
 {
-	return ( a < b ? a : b );
+	if ( a < b)
+		return ( a );
+	return ( b );
 }
 
 template< typename T >
-T&	max( T& a, T& b )
+const T&	max( const T& a, const T& b )
 {
-	return ( a > b ? a : b );
+	if ( a > b)
+		return ( a );
+	return ( b );
 }
 
 template< typename T>

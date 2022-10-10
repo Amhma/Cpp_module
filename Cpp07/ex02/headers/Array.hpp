@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 02:09:42 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/09 12:43:15 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/10 17:42:25 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,17 @@ class Array
 
 	public:
 
-		Array( void );
-		Array( unsigned int n );
-		Array( const Array & rhs );
+		Array<T>( void );
+		Array<T>( const unsigned int n );
+		Array<T>( const Array<T> & rhs );
 
-		~Array( void );
+		~Array<T>( void );
 
-		Array &	operator=( const Array & rhs );
-		T	& operator[]( unsigned int n );
+		Array<T>	& operator=( const Array<T> & rhs );
+		T			& operator[]( const unsigned int n ) const;
 
 		T*				getArray( void ) const;
 		unsigned int	size( void ) const;
-
-		void			setSize( const unsigned int size ) const;
 
 		class InvalidIndice : public std::exception
 		{
@@ -46,7 +44,7 @@ class Array
 		T*				_array;
 		unsigned int	_size;
 
-		void			setArray( const T *array ) const;
+		void			setArray( const T *array );
 
 };
 

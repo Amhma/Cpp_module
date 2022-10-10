@@ -1,10 +1,11 @@
-NAME		= iter
+NAME		= span
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
 INCDIR		= -I headers
 SRCDIR		= ./srcs
 OBJDIR		= ./obj
-SRC			= main.cpp
+SRC			= main.cpp		\
+				Span.cpp
 OBJ_O		= $(SRC:.cpp=.o)
 OBJ_D		= $(SRC:.cpp=.d)
 RM			= rm -rf

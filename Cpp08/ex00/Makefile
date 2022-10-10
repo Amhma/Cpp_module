@@ -1,4 +1,4 @@
-NAME		= array
+NAME		= easy
 CC			= c++
 CPPFLAGS	= -std=c++98 -MMD -MP -Wall -Werror -Wextra
 INCDIR		= -I headers

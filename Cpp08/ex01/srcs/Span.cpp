@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:40:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/11 18:54:01 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/11 22:06:23 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,18 +85,19 @@ unsigned int	Span::shortestSpan( void )
 {
 	unsigned int	size = UINT_MAX;
 	long int		temp;
-	std::list<int>::const_iterator	it = this->_lints.begin();
+	std::list<int>::iterator	it;
 
 	if ( this->_lints.empty() || this->_lints.size() == 1 )
 		throw( Span::NoSizeToFind() );
 	
 	this->_lints.sort();
+	it = this->_lints.begin();
 	do
 	{
 		temp = abs( *it - *(++it) );
 		if ( temp < size )
 			size = temp;
-	} while ( it != --this->_lints.end() );
+	} while ( it != this->_lints.end() );
 	return ( size );
 }
 
@@ -108,7 +109,7 @@ void			Span::insertNumbersRand( const int size )
 
 	srand(time(NULL));
 	for ( int i(0); i < size; i++ )
-		nbr[i] = rand();
+		nbr[i] = rand() % INT_MAX;
 	this->_lints.insert( this->_lints.begin(), nbr.begin(), nbr.end() );
 }
 

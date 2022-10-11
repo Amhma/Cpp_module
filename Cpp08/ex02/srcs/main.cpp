@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:37:04 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/11 01:40:23 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:12:24 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -27,8 +27,8 @@ int main()
 			sp.push(9);
 			sp.push(11);
 
-			MutantStack<int>::iterator	it = sp.begin();
-			MutantStack<int>::iterator	ite = sp.end();
+			MutantStack<int>::const_iterator	it = sp.cbegin();
+			MutantStack<int>::const_iterator	ite = sp.cend();
 
 			while ( it != ite )
 				std::cout << " " << *(it++) << std::endl;

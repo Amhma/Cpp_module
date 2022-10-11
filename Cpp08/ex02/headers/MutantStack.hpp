@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:03:08 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/11 01:40:37 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:16:54 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class MutantStack : public std::stack<T>
 
 	public:
 
-		typedef typename std::deque<T>::iterator				iterator;
-		typedef typename std::deque<T>::reverse_iterator		reverse_iterator;
-		typedef typename std::deque<T>::const_iterator			const_iterator;
-		typedef typename std::deque<T>::const_reverse_iterator	const_reverse_iterator;
+		typedef typename std::stack<T>::container_type::iterator				iterator;
+		typedef typename std::stack<T>::container_type::reverse_iterator		reverse_iterator;
+		typedef typename std::stack<T>::container_type::const_iterator			const_iterator;
+		typedef typename std::stack<T>::container_type::const_reverse_iterator	const_reverse_iterator;
 
 		MutantStack<T>( void );
 		MutantStack<T>( const MutantStack<T> & rhs );
@@ -38,10 +38,10 @@ class MutantStack : public std::stack<T>
 		iterator				end( void );
 		reverse_iterator		rbegin( void );
 		reverse_iterator		rend( void );
-		const_iterator			cbegin( void );
-		const_iterator			cend( void );
-		const_reverse_iterator	crbegin( void );
-		const_reverse_iterator	crend( void );
+		const_iterator			cbegin( void ) const;
+		const_iterator			cend( void ) const;
+		const_reverse_iterator	crbegin( void ) const;
+		const_reverse_iterator	crend( void ) const;
 
 };
 

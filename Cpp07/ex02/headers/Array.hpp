@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 02:09:42 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/10 17:42:25 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/11 19:00:09 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Array
 		~Array<T>( void );
 
 		Array<T>	& operator=( const Array<T> & rhs );
-		T			& operator[]( const unsigned int n ) const;
+		T			& operator[]( const unsigned int n );
+		const T		& operator[]( const unsigned int n ) const;
 
 		T*				getArray( void ) const;
 		unsigned int	size( void ) const;

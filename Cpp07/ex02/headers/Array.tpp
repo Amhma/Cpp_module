@@ -49,12 +49,19 @@ Array<T> &	Array<T>::operator=( const Array<T> & rhs )
 }
 
 template< typename T >
-T	& Array<T>::operator[]( const unsigned int n ) const
+T			& Array<T>::operator[]( const unsigned int n )
 {
-	if ( n < this->_size )
-		return ( this->_array[n] );
-	throw ( InvalidIndice() );
-	return ( this->_array[0] );
+	if ( n >= this->_size )
+		throw ( InvalidIndice() );
+	return ( this->_array[n] );
+}
+
+template< typename T >
+const T		&  Array<T>::operator[]( const unsigned int n ) const
+{
+	if ( n >= this->_size )
+		throw ( InvalidIndice() );
+	return ( this->_array[n] );
 }
 
 template< typename T >

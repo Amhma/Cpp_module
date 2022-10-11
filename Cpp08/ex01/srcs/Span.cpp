@@ -6,7 +6,7 @@
 /*   By: amahla <amahla@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:40:25 by amahla            #+#    #+#             */
-/*   Updated: 2022/10/10 18:27:47 by amahla           ###   ########.fr       */
+/*   Updated: 2022/10/11 18:54:01 by amahla           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ unsigned int	Span::shortestSpan( void )
 
 void			Span::insertNumbersRand( const int size )
 {
+	if ( this->_lints.size() + size > this->_size )
+		throw ( std::out_of_range( "Exception: no more places for a new number" ) );
 	std::vector<int>	nbr( size );
 
 	srand(time(NULL));
